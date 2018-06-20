@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hangman Game</title>
     <!-- CSS Reference -->
     <link rel='stylesheet' type='text/css' href="./assets/css/reset.css" />
@@ -16,15 +17,69 @@
 
 <body>
 
-    <!-- <h1>Hangman Game!</h1>
-    <h2>Type any letter to guess, "d" to drive to work, "w" to drive around the world, or "t" to get a tuneup.</h2>
-    <h2>See console for car stats.</h2> -->
 
-    <script type='text/javascript' src='./assets/javascript/game.js'>
-    // Declare ID's and Variables
-    // <div id="display"></div>
-    // <div id="buttons"></div>
-    // <button id="clear">clear</button> 
+    <header>
+        <div id="game-title" class="boxSet topBox">
+            <h1>HANGMAN WORD GUESS GAME</h1>
+        </div>
+        <h2 id="instruction" class="boxSet topBox"> Type a letter to start! </h2>
+    </header>
+
+    <div class="container">
+            <!-- <section class="boxSet topBox">
+              <h1>Guess the Word</h1>
+              <h3>Toy Story Themed Names</h3>
+              <h2 class="HV1">Press any
+                <strong>Letter</strong> to guess</h2>
+            </section> -->
+            <!--  -->
+            <section id="gameSpace" class=" boxSet midBox">
+              <h1 id="puzzleWord">__ __ __ __ __ __ __</h1>
+              <br>
+            </section>
+            <!--  -->
+            <section class="boxSet bottomBox stats">
+              <p> Wins:
+                <span id="winsCount"> 0 </span> </p>
+              <p> Guesses Left:
+                <span id="guessesLeft"> 8 </span> </p>
+              <p> Already Guessed:
+                <span id="wrongLetters"> ... </span> </p>
+            </section>
+          </div>
+
+
+    <script type='text/javascript'>
+    //  src='./assets/javascript/game.js'>
+
+        // Array of words for the game, theme: Famous Painters
+        var PAINTERS = ["pollock", "dali", "monet", "picasso", "warhol", "seurat"];
+        var Puzzle_Word="";
+        var Word_Letters=[];
+        var Unsolved_Puzzle=[];
+        var Char_Count=0;
+        var Wins_Count=0;
+        var Wrong_Letters=[];
+        var Guesses_Left=8;
+
+        // Randomly selects a string from the PAINTERS array
+        function gameStart(){
+            Puzzle_Word = PAINTERS[Math.floor(Math.random()*PAINTERS.length)];
+            Char_Count = Puzzle_Word.length;
+            Word_Letters=Puzzle_Word.split("");
+
+            var Wins_Count=0;
+            var Wrong_Letters=[];
+            var Guesses_Left=8;
+
+            for(var i=0; i < charCount; i++){
+                Unsolved_Puzzle.push("__ ");
+            };
+
+            document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle.join(" ");
+        };
+
+    
     </script>
 
   

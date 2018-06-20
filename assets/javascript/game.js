@@ -1,18 +1,15 @@
-// Array of words for the game, theme: Famous Painters
-var PAINTERS = ["pollock", "dali", "monet", "picasso", "warhol", "seurat"];
 
-// Randomly selects a string from the PAINTERS array
-Puzzle_Word = PAINTERS[Math.floor(Math.random()*PAINTERS.length)];
-charCount = Puzzle_Word.length;
 // Sets the puzzle with the appropriate number of blanks __
 
-function displayBlanks(charCount) {
-    blanks=" ";
-    for(var i=0; i < charCount; i++){
-        blanks = blanks += "__ ";
-    };
-    console.log(blanks);
-};
+// function displayBlanks(charCount) {
+//     for(var i=0; i < charCount; i++){
+//         blankPuzzle.push("__ ");
+//         // blanks = blanks += "__ ";
+//     };
+//     // console.log(blanks);
+//     // console.log(blankPuzzle);
+//     return blankPuzzle;
+// };
 
 // Event listener
 
@@ -22,3 +19,5 @@ function displayBlanks(charCount) {
 //         var puzzleChar = Puzzle_Word.charAt(i);
 
 // };
+
+// Letters already guessed. Store key event into an array

@@ -1,9 +1,55 @@
-/* Add Background Image */
-/* 
-body {
-    background: url(Assets/fridge.png) no-repeat;
-} 
-*/
 
+#game-title {
+    line-height: 0.95em;
+    letter-spacing: -0.125em;
+}
 
+#instruction {
+    font-weight: 200;
+}
+
+html {
+    font-size: 18px;
+    background-image: url("../images/IMG_7325.JPG");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* font-family: "Stylish", sans-serif; */
+    color: 3d405b;
+  }
+
+.container {
+/* layout stuff */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blanchedalmond;
+}
+h1 {
+    font-size: 2.8em;
+}
+.fnStart {
+    /* color: #e07a5f; */
+    font-size: 1.5em;
+}
+.boxSet {
+padding: 1.5em;
+    /* background-color: rgba(84, 164, 203, 80%); */
+    text-align: center;
+    margin: auto;
+}
+.midBox {
+    display: flex;
+    flex-direction: column;
+}
+.guessBox {
+    padding: 20px;
+}
+.Go {
+    padding: 10px;
+}
+p {
+    font-weight: 600;
+    /* line-height: 20px; */
+}
 
