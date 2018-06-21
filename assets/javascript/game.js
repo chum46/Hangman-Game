@@ -1,23 +1,49 @@
+    // Array of words for the game, theme: Famous Painters
+    var PAINTERS = ["pollock", "dali", "monet", "picasso", "warhol", "seurat"];
+    var Puzzle_Word="";
+    var Word_Letters=[];
+    var Unsolved_Puzzle=[];
+    var Char_Count=0;
+    var Wins_Count=0;
+    var Wrong_Letters=[];
+    var Guesses_Left=8;
 
-// Sets the puzzle with the appropriate number of blanks __
+    // FUNCTIONS
+    function gameStart(){
+        // Word is randomly selected from the array split into
+        // individual characters
+        Puzzle_Word = PAINTERS[Math.floor(Math.random()*PAINTERS.length)];
+        Char_Count = Puzzle_Word.length;
+        Word_Letters=Puzzle_Word.split("");
 
-// function displayBlanks(charCount) {
-//     for(var i=0; i < charCount; i++){
-//         blankPuzzle.push("__ ");
-//         // blanks = blanks += "__ ";
-//     };
-//     // console.log(blanks);
-//     // console.log(blankPuzzle);
-//     return blankPuzzle;
-// };
+        // Resets the global variables
+        var Wins_Count=0;
+        var Unsolved_Puzzle=[];
+        var Wrong_Letters=[];
+        var Guesses_Left=8;
 
-// Event listener
+        // Gives the puzzle the correct number of blanks
+        for(var i=0; i < Char_Count; i++){
+            Unsolved_Puzzle.push("__ ");
+        };
 
-// Checks if the key from the event listener matches any character in the puzzle word
-// function letterCheck(Puzzle_Word, key) {
-//     for(var i=0; i < PAINTERS.length; i++)
-//         var puzzleChar = Puzzle_Word.charAt(i);
+        // Testing / Debugging
 
-// };
+        console.log(Puzzle_Word);
+        console.log(Word_Letters);
+        console.log(Char_Count);
+        console.log(Unsolved_Puzzle);
 
-// Letters already guessed. Store key event into an array
+        // 
+        document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle.join("");
+    };
+    
+    // Store what letter is pressed in a local variable keyPress
+    // Cycle Word_Letters array to see if keyPress matches 
+    // Store the index numbers in an array
+    // Replace blanks in Unsolved_Puzzle with the keyPress letter
+    // at the appropriate index number
+    // Run this function till Unsolved_Puzzle has no more blanks
+    
+    // FUNCTION CALLOUTS
+    gameStart();

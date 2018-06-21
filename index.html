@@ -22,7 +22,8 @@
         <div id="game-title" class="boxSet topBox">
             <h1>HANGMAN WORD GUESS GAME</h1>
         </div>
-        <h2 id="instruction" class="boxSet topBox"> Type a letter to start! </h2>
+        <h2 id="instruction" class="boxSet topBox">
+            TYPE A LETTER TO START! </h2>
     </header>
 
     <div class="container">
@@ -39,6 +40,7 @@
             </section>
             <!--  -->
             <section class="boxSet bottomBox stats">
+                <p> Clue: Last Name of a Famous Painter </p>
               <p> Wins:
                 <span id="winsCount"> 0 </span> </p>
               <p> Guesses Left:
@@ -49,57 +51,7 @@
           </div>
 
 
-    <script type='text/javascript'>
-    //  src='./assets/javascript/game.js'>
-
-        // Array of words for the game, theme: Famous Painters
-        var PAINTERS = ["pollock", "dali", "monet", "picasso", "warhol", "seurat"];
-        var Puzzle_Word="";
-        var Word_Letters=[];
-        var Unsolved_Puzzle=[];
-        var Char_Count=0;
-        var Wins_Count=0;
-        var Wrong_Letters=[];
-        var Guesses_Left=8;
-
-        // FUNCTIONS======================================================
-        function gameStart(){
-            // Word is randomly selected from the array split into
-            // individual characters
-            Puzzle_Word = PAINTERS[Math.floor(Math.random()*PAINTERS.length)];
-            Char_Count = Puzzle_Word.length;
-            Word_Letters=Puzzle_Word.split("");
-
-            // Resets the global variables
-            var Wins_Count=0;
-            var Unsolved_Puzzle=[];
-            var Wrong_Letters=[];
-            var Guesses_Left=8;
-
-            // Gives the puzzle the correct number of blanks
-            for(var i=0; i < Char_Count; i++){
-                Unsolved_Puzzle.push("__ ");
-            };
-
-            // Testing / Debugging
-
-            console.log(Puzzle_Word);
-            console.log(Word_Letters);
-            console.log(Char_Count);
-            console.log(Unsolved_Puzzle);
-
-            // 
-            document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle.join("");
-        };
-        
-        // Store what letter is pressed in a local variable keyPress
-        // Cycle Word_Letters array to see if keyPress matches 
-        // Store the index numbers in an array
-        // Replace blanks in Unsolved_Puzzle with the keyPress letter
-        // at the appropriate index number
-
-        // FUNCTION CALLOUTS
-        gameStart();
+    <script type='text/javascript' src='./assets/javascript/game.js'>
     
     </script>
 

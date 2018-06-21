@@ -2,10 +2,15 @@
 #game-title {
     line-height: 0.95em;
     letter-spacing: -0.125em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #instruction {
     font-weight: 200;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: rgba(21, 27, 53, 0.473);
 }
 
 html {
@@ -19,11 +24,11 @@ html {
   }
 
 .container {
-/* layout stuff */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: blanchedalmond;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1 {
     font-size: 2.8em;
