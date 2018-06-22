@@ -37,6 +37,7 @@
         // 
         document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle.join("");
         document.getElementById('guessesLeft').innerHTML=Guesses_Left;
+        document.getElementById('wrongLetters').innerHTML=Wrong_Letters;
         // document.getElementById('winsCount').innerHTML=Wins_Count;
     }
 
@@ -51,14 +52,13 @@
         if(checkTheLetter) {
             for(var i=0; i< Char_Count; i++){
                 if (Word_Letters[i] == guessedLetter) {
-                    Unsolved_Puzzle[i]= guessedLetter;
-                    document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle;
-
+                    Unsolved_Puzzle[i]= Word_Letters[i].toString();
+                    console.log(Unsolved_Puzzle);
                 }
             }
+            // document.getElementById('puzzleWord').innerHTML=Unsolved_Puzzle.toString();
         }
         else {
-            alert("wrong");
             Wrong_Letters.push(guessedLetter);
             Guesses_Left--
             document.getElementById('guessesLeft').innerHTML=Guesses_Left;
@@ -72,6 +72,12 @@
             console.log(Wins_Count);
             alert("Winner!");
             document.getElementById('winsCount').innerHTML=Wins_Count;
+            gameStart();
+        }
+        else if (Guesses_Left==0) {
+            alert("You LOST!");
+            Guesses_Left=8;
+            Wrong_Letters=[];
             gameStart();
         }
 
